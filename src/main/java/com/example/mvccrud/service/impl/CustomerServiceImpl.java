@@ -28,6 +28,12 @@ public class CustomerServiceImpl implements CustomerService {
         return customers.stream().map((customer -> mapToCustomerDto(customer))).collect(Collectors.toList());
     }
 
+    @Override
+    public Customer saveCustomer(Customer customer) {
+        customerRepository.save(customer);
+        return customer;
+    }
+
 
     public CustomerDTO mapToCustomerDto(Customer customer){
         CustomerDTO customerDTO = CustomerDTO.builder()
@@ -39,7 +45,6 @@ public class CustomerServiceImpl implements CustomerService {
 
         return customerDTO;
     }
-
 
 
 

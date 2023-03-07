@@ -11,4 +11,7 @@ public interface CustomerRepo extends JpaRepository<Customer, Long> {
 
     public List<Customer> findAll();
 
+    public Customer save(Customer customer);
+
+
 }
