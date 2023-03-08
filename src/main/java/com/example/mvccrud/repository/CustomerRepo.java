@@ -9,9 +9,10 @@ import java.util.List;
 
 public interface CustomerRepo extends JpaRepository<Customer, Long> {
 
-    public List<Customer> findAll();
+     List<Customer> findAll();
 
-    public Customer save(Customer customer);
+     Customer save(Customer customer);
+
 
 
 }

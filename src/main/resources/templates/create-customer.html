@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>create-account</title>
-    <link rel="stylesheet" src="../static/css/style.css" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
   <form class="form" role="form" th:action="@{/customers/create}" th:object="${customer}" method="post">

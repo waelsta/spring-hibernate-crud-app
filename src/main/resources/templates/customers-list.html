@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .customer-div{
+            width:70%;
+            height:fit-content;
+            max-height:100px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:2px 15px;
+            border-radius:5px;
+            border: 1px solid #777;
+            margin-top:10px;
+            background: beige;
+        }
+        .edit{
+            text-decoration: none;
+            width:fit-content;
+            padding:4px;
+            background: antiquewhite;
+            text:black;
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <div th:each="customer :${customers}" style="display: flex; flex-direction: column; width:80%;height:fit-content;background-color:deepskyblue;padding-left:20px;  margin-top:5px;  ">
-        in the main dain of ch5aynz ben :<p th:text="${customer.lastName}" />
+    <div th:each="customer :${customers}" class="customer-div">
+        <span th:text="${customer.lastName}"/>
+        <a class="edit" th:href="@{/customers/{customerId}/edit(customerId=${customer.id})}">Edit</a>
     </div>
 </body>
 </html>
