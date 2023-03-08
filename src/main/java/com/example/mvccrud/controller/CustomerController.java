@@ -41,8 +41,14 @@ public class CustomerController {
     }
 
     @PostMapping("/customers/create")
-    public String saveCustomer(@ModelAttribute(value="customer") Customer customer){
-        customerService.saveCustomer(customer);
+    public String saveCustomer(@Valid @ModelAttribute(value="customer") CustomerDTO customerDTO,
+                               BindingResult result,Model model){
+
+        if(result.hasErrors()){
+            model.addAttribute("customer",customerDTO);
+            return "create-customer";
+        }
+        customerService.saveCustomer(customerDTO);
         return "redirect:/customers";
     }
 

@@ -35,7 +35,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer saveCustomer(Customer customer) {
+    public Customer saveCustomer(CustomerDTO customerDTO) {
+        Customer customer = mapToCustomer(customerDTO);
         customerRepository.save(customer);
         return customer;
     }

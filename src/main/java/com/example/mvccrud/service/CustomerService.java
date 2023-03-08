@@ -11,7 +11,7 @@ public interface CustomerService {
 
     public List<CustomerDTO> getAllCustomers();
 
-    public Customer saveCustomer(Customer customer);
+    public Customer saveCustomer(CustomerDTO customerDTO);
 
     void updateCustomer(CustomerDTO customer);
 }

@@ -8,9 +8,12 @@
 <body>
   <form class="form" role="form" th:action="@{/customers/create}" th:object="${customer}" method="post">
     first name :<input th:field="${customer.firstName}" />
+      <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-message" ></p>
     last name :<input th:field="${customer.lastName}" />
-    email :<input th:field="${customer.email}" />
-    <button type="submit" >Submit</button>
+      <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-message" ></p>
+      email :<input th:field="${customer.email}" />
+      <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message" ></p>
+      <button type="submit" >Submit</button>
   </form>
 </body>
 </html>

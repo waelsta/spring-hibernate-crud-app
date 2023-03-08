@@ -13,6 +13,4 @@ public interface CustomerRepo extends JpaRepository<Customer, Long> {
 
      Customer save(Customer customer);
 
-
-
 }
