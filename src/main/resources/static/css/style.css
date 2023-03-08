@@ -27,3 +27,7 @@ input{
     padding-left: 10px;
 }
 
+.error-message{
+    color:darkred;
+}
+

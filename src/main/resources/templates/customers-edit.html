@@ -7,11 +7,15 @@
 </head>
 <body>
   <form class="form" role="form" th:action="@{/customers/{customerId}/edit(customerId=${customer.id})}" th:object="${customer}" method="post">
-      <input type="hidden" th:field="*{id}">
+      <input type="hidden" th:field="*{id}" />
     first name :<input th:field="*{firstName}" />
+      <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-message"></p>
     last name :<input th:field="*{lastName}" />
-    email :<input th:field="*{email}" />
-    <button type="submit" >Submit</button>
+      <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-message"></p>
+     email :<input th:field="*{email}" />
+      <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message"></p>
+
+      <button type="submit" >Submit</button>
   </form>
 </body>
 </html>
