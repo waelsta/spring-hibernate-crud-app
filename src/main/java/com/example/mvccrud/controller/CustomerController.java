@@ -67,4 +67,14 @@ public class CustomerController {
         customerService.updateCustomer(customerDTO);
         return "redirect:/customers";
     }
+
+    @GetMapping("/customers/{customerId}")
+    public String showCustomer(@PathVariable("customerId") long customerId, Model model){
+        CustomerDTO customer = customerService.findCustomerById(customerId);
+        model.addAttribute("customer",customer);
+        return "customer-details";
+    }
+
+
+
 }

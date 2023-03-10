@@ -25,11 +25,16 @@
             text:black;
             border:1px solid black;
         }
+        a{
+            text-decoration: none;
+            text-decoration: none;
+            text-decoration-color: black;
+        }
     </style>
 </head>
 <body>
     <div th:each="customer :${customers}" class="customer-div">
-        <span th:text="${customer.lastName}"/>
+        <a th:text="${customer.lastName}" th:href="@{/customers/{customerId}(customerId=${customer.id})}"/>
         <a class="edit" th:href="@{/customers/{customerId}/edit(customerId=${customer.id})}">Edit</a>
     </div>
 </body>
