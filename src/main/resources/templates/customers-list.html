@@ -30,12 +30,23 @@
             text-decoration: none;
             text-decoration-color: black;
         }
+        .delete{
+            text-decoration: none;
+            width:fit-content;
+            padding:4px;
+            background: indianred;
+            text:black;
+            border:1px solid black;
+        }
     </style>
 </head>
 <body>
     <div th:each="customer :${customers}" class="customer-div">
         <a th:text="${customer.lastName}" th:href="@{/customers/{customerId}(customerId=${customer.id})}"/>
-        <a class="edit" th:href="@{/customers/{customerId}/edit(customerId=${customer.id})}">Edit</a>
+        <div style="display:flex;place-content: center">
+            <a class="edit" th:href="@{/customers/{customerId}/edit(customerId=${customer.id})}">Edit</a>
+            <a class="delete" th:href="@{/customers/{customerId}/delete(customerId=${customer.id})}" >Delete</a>
+        </div>
     </div>
 </body>
 </html>

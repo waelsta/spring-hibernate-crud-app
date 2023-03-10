@@ -1,5 +1,6 @@
 package com.example.mvccrud.repository;
 
+import com.example.mvccrud.dto.CustomerDTO;
 import com.example.mvccrud.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -13,4 +14,5 @@ public interface CustomerRepo extends JpaRepository<Customer, Long> {
 
      Customer save(Customer customer);
 
+     void delete(Customer customer);
 }

@@ -44,8 +44,13 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void updateCustomer(CustomerDTO customerDTO){
         Customer customer = mapToCustomer(customerDTO);
-        System.out.println(customer);
         customerRepository.save(customer);
+    }
+
+    @Override
+    public void deleteCustomer(CustomerDTO customerDTO) {
+        Customer customer = mapToCustomer(customerDTO);
+        customerRepository.delete(customer);
     }
 
 
