@@ -41,6 +41,9 @@
     </style>
 </head>
 <body>
+    <form class="search-bar" th:action="@{/customers/search}">
+        <input type="search" placeholder="search customers" name="query" />
+    </form>
     <div th:each="customer :${customers}" class="customer-div">
         <a th:text="${customer.lastName}" th:href="@{/customers/{customerId}(customerId=${customer.id})}"/>
         <div style="display:flex;place-content: center">

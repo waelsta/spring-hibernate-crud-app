@@ -17,5 +17,5 @@ public interface CustomerService {
 
     void deleteCustomer(CustomerDTO customer);
 
-
+    List<CustomerDTO> searchCustomers(String query);
 }

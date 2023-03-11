@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class CustomerController {
 
@@ -78,6 +80,11 @@ public class CustomerController {
         return "redirect:/customers";
     }
 
-
+    @GetMapping("/customers/search")
+    public String searchCustomers(@RequestParam(value="query") String query, Model model){
+        List<CustomerDTO> customers = customerService.searchCustomers(query);
+        model.addAttribute("customers",customers);
+        return "customers-list";
+    }
 
 }
